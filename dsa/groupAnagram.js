@@ -1,0 +1,1 @@
+let strs = ["eat","tea","tan","ate","nat","bat"]
