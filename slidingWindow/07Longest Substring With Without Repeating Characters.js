@@ -54,3 +54,5 @@ const LongestSubStr=(s)=>{
 }
 
 console.log(LongestSubStr(s))
+
+//code work properly
