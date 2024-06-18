@@ -4,16 +4,25 @@ class Graph {
     } 
     
     // utility function to add edge in an undirected graph 
-    addEdge(a, b) { 
-        if (this.graph.has(a)) { 
-            let l = this.graph.get(a); 
-            l.push(b); 
-            this.graph.set(a, l); 
-        } else { 
-            this.graph.set(a, [b]); 
-        } 
+  // Utility function to add edge in an undirected graph 
+  addEdge(a, b) { 
+    if (this.graph.has(a)) { 
+        let l = this.graph.get(a); 
+        l.push(b); 
+        this.graph.set(a, l); 
+    } else { 
+        this.graph.set(a, [b]); 
+    }
     
-    } 
+    // Since this is an undirected graph, add edge in both directions
+    if (this.graph.has(b)) { 
+        let l = this.graph.get(b); 
+        l.push(a); 
+        this.graph.set(b, l); 
+    } else { 
+        this.graph.set(b, [a]); 
+    }
+}
     
     detectCycle(src, visited) {
         console.log(this.graph)
@@ -28,7 +37,7 @@ class Graph {
             for (let neighbour of this.graph.get(currentNode)) {
                 if (!visited[neighbour]) {
                     visited[neighbour] = true;
-                    queue.push([neighbour, currentNode]);
+                    queue.push([neighbour, currentNode]); 
                 } else if (parent != neighbour) {
                     return true;
                 }
@@ -47,19 +56,13 @@ let v = 7;
 let visited = Array(v).fill(false);
 
 g.addEdge(1, 2); 
-g.addEdge(1, 3); 
-g.addEdge(2, 5); 
-g.addEdge(2, 1); 
-g.addEdge(3, 4); 
-g.addEdge(3, 1);
-g.addEdge(3, 6);
-g.addEdge(4, 3);
-g.addEdge(6, 3);
-g.addEdge(6, 7);
-g.addEdge(5, 2);
-g.addEdge(5, 7);
-g.addEdge(7, 5);
-g.addEdge(7, 6);
+    g.addEdge(1, 3); 
+    g.addEdge(2, 5); 
+    g.addEdge(3, 4); 
+    g.addEdge(3, 6);
+    g.addEdge(6, 7);
+    g.addEdge(5, 7);
+    
 
 // g.addEdge(1, 2);
 // g.addEdge(1, 3);
