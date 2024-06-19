@@ -6,10 +6,7 @@ const bfs = (i, j, visitedMatrix, matrixContaingWater$Island) => {
     const m = matrixContaingWater$Island[0].length;
 
     while (queue.length) {
-        let position = queue.shift();
-        let row = position[0];
-        let col = position[1];
-
+        let [row,col]=queue.shift();
         for (let delRow = -1; delRow <= 1; delRow++) {
             for (let delCol = -1; delCol <= 1; delCol++) {
                 // Only move horizontally or vertically, not diagonally
