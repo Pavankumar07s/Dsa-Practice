@@ -23,9 +23,7 @@ class Graph {
     this.visited[src] = 1;
     for (let neighbor of this.graph.get(src) || []) {
       if (!this.visited[neighbor]) {
-        if (this.Dfs(neighbor)) {
-          return true;
-        }
+        this.Dfs(neighbor);
       }
     }
     this.Stack.unshift(src);
