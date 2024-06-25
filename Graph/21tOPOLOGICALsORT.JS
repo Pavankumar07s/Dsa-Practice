@@ -48,7 +48,6 @@ function main() {
     }
   }
 
-  console.log(g.Stack);
   console.log(`this is the Topological sort `);
   for (let elem of g.Stack) {
     console.log(`${elem}`);
