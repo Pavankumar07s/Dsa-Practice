@@ -46,7 +46,7 @@ const dizfs = (startingPoition, finalPositon, matrixContaingEffrot) => {
               ),nodeEffort)
                
 
-              queue.push([effortMatrix[newRow][newCol], newRow, newCol]);
+               queue.push([effortMatrix[newRow][newCol], newRow, newCol]);
             }
           }
         }
@@ -67,7 +67,7 @@ const main = () => {
   const startingPoition = [0, 0];
   const finalPositon = [row - 1, col - 1];
 
-  let ans = dizfs(startingPoition, finalPositon, matrixContaingEffrot);
-  console.log(ans);
+  
+  console.log(dizfs(startingPoition, finalPositon, matrixContaingEffrot));
 };
 main();
