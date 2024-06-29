@@ -1,3 +1,5 @@
+// Given a weighted and directed graph of V vertices and E edges, Find the shortest distance of all the vertex's from the source vertex S. If a vertices can't be reach from the S then mark the distance as 10^8. Note: If the Graph contains a negative cycle then return an array consisting of only -1.
+
 function main() {
   let v = 6;
   let edges = [
@@ -14,7 +16,7 @@ function main() {
   distance[src] = 0;
   for (let i = 0; i < v; i++) {
     for (let [n1, n2, weight] of edges) {
-      if (distance[n1] + weight < distance[n2]) {
+      if (distance[n1] + weight < distance[n2] && distance[n1]!=Infinity) {
         distance[n2] = distance[n1] + weight;
       }
     }
