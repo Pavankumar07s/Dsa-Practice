@@ -20,7 +20,7 @@ function main() {
     }
   }
 
-  return `Min distance to reach all the noeds:-> ${distance}`;
+  return `Minimum distance to reach all the nodes:-> ${distance}`;
 }
 
 console.log(main());

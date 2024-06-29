@@ -70,7 +70,7 @@ function main() {
   let ways = Array(v).fill(0);
 
   g.dijkstra(src, dest, distance, ways);
-  return `Total number of ways to reach the destination:-> ${ways[dest]}`;
+  return `Total number of ways to reach the destinations:-> ${ways[dest]}`;
 }
 
 console.log(main());
