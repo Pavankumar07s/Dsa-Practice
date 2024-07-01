@@ -40,13 +40,15 @@ const dizfs = (startingPoition, finalPositon, matrixContaingEffrot) => {
 
                 queue.push([effortMatrix[newRow][newCol], newRow, newCol]);
               }
-              effortMatrix[newRow][newCol] = Math.max(Math.abs(
-                matrixContaingEffrot[newRow][newCol] -
-                  matrixContaingEffrot[currentrow][currentcol]
-              ),nodeEffort)
-               
+              effortMatrix[newRow][newCol] = Math.max(
+                Math.abs(
+                  matrixContaingEffrot[newRow][newCol] -
+                    matrixContaingEffrot[currentrow][currentcol]
+                ),
+                nodeEffort
+              );
 
-               queue.push([effortMatrix[newRow][newCol], newRow, newCol]);
+              queue.push([effortMatrix[newRow][newCol], newRow, newCol]);
             }
           }
         }
@@ -67,7 +69,8 @@ const main = () => {
   const startingPoition = [0, 0];
   const finalPositon = [row - 1, col - 1];
 
-  
   console.log(dizfs(startingPoition, finalPositon, matrixContaingEffrot));
 };
 main();
+
+////////////this code should be corrected
