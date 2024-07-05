@@ -253,74 +253,74 @@
 //         return this.items.length;
 //     }
 //  } 
-// var checkValidString = function(s) {
-//     let stack =new Stack();
-//         let openBraces=0
-//         let closedBraces=0
-//         let countStar=0
-//         // for(let i=0;i<s.length;i++){
-//         //     if(s[i]=='('){
-//         //         stack.push(s[i])
-//         //         openBraces++
-//         //     }
-//         //     else if(s[i]==")"){
-//         //         if(s[i]=")" && stack.peek()=="("){
-//         //             stack.pop()
-//         //             openBraces--
-//         //         }
-//         //         else{
-//         //             stack.push(s[i])
-//         //             closedBraces++
-//         //         }
-//         //     }
-//         //     else{
-//         //         countStar++
-//         //     }
-//         // }
-//         // console.log(openBraces,closedBraces,countStar)
-//         // let costForValid=Math.floor((openBraces+1)/2)+Math.floor((closedBraces+1)/2)
-//         // console.log(costForValid)
+var checkValidString = function(s) {
+    let stack =new Stack();
+        let openBraces=0
+        let closedBraces=0
+        let countStar=0
+        for(let i=0;i<s.length;i++){
+            if(s[i]=='('){
+                stack.push(s[i])
+                openBraces++
+            }
+            else if(s[i]==")"){
+                if(s[i]=")" && stack.peek()=="("){
+                    stack.pop()
+                    openBraces--
+                }
+                else{
+                    stack.push(s[i])
+                    closedBraces++
+                }
+            }
+            else{
+                countStar++
+            }
+        }
+        console.log(openBraces,closedBraces,countStar)
+        let costForValid=Math.floor((openBraces+1)/2)+Math.floor((closedBraces+1)/2)
+        console.log(costForValid)
         
-//         // if(costForValid<=countStar){
-//         //     return true
-//         // }
-//         // else{
-//         //     return false
-//         // }
+        if(costForValid<=countStar){
+            return true
+        }
+        else{
+            return false
+        }
 
-//         for(let elem of s){
-//             if(elem=="("){
-//                 openBraces++
-//             }
-//             else if(elem=="*") countStar++ ;
-//             else{
-//                 if(openBraces>0) openBraces--;
-//                 else if(countStar>0) countStar-- ;
-//                 else return false ;
-//             }
-//         }
-//         console.log(openBraces,countStar)
-//         if(openBraces>countStar) return false ;
-//         countStar =0 ;
-//         for(let i=s.length-1 ; i>=0 ; i--)
-//         {   elem = s[i];
-//             if(elem==")"){
-//                 closedBraces++
-//             }
-//             else if(elem=="*") countStar++ ;
-//             else{
-//                 if(closedBraces>0) closedBraces--;
-//                 else if(countStar>0) countStar-- ;
-//                 else return false ;
-//             }
-//         }
-//         // console.log(closedBraces,countStar)
-//         if(closedBraces>countStar) return false ;
-//         return true ;
+        for(let elem of s){
+            if(elem=="("){
+                openBraces++
+            }
+            else if(elem=="*") countStar++ ;
+            else{
+                if(openBraces>0) openBraces--;
+                else if(countStar>0) countStar-- ;
+                else return false ;
+            }
+        }
+        console.log(openBraces,countStar)
+        if(openBraces>countStar) return false ;
+        countStar =0 ;
+        for(let i=s.length-1 ; i>=0 ; i--)
+        {   elem = s[i];
+            if(elem==")"){
+                closedBraces++
+            }
+            else if(elem=="*") countStar++ ;
+            else{
+                if(closedBraces>0) closedBraces--;
+                else if(countStar>0) countStar-- ;
+                else return false ;
+            }
+        }
+        // console.log(closedBraces,countStar)
+        if(closedBraces>countStar) return false ;
+        return true ;
 
-// };
+};
 
-// console.log(checkValidString("(((((*(((((*((**(((*)*((((**))*)*)))))))))((*(((((**(**)"))
+console.log(checkValidString("(((((*(((((*((**(((*)*((((**))*)*)))))))))((*(((((**(**)"))
 
 
 
