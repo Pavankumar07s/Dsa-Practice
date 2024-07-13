@@ -1,4 +1,4 @@
-const dfs=(startingRow,startingCol,newColor,startingPoition,matrixContaingPixel,initialColor)=>{
+const dfs=(startingRow,startingCol,newColor,matrixContaingPixel,initialColor)=>{
     const row=matrixContaingPixel.length
     const col=matrixContaingPixel[0].length
     matrixContaingPixel[startingRow][startingCol]=newColor;
@@ -15,7 +15,7 @@ const dfs=(startingRow,startingCol,newColor,startingPoition,matrixContaingPixel,
                     matrixContaingPixel[newRow][newCol] === initialColor&&
                     matrixContaingPixel[newRow][newCol] !==newColor
                 ) {
-                    dfs(newRow,newCol,newColor,startingPoition,matrixContaingPixel,initialColor)
+                    dfs(newRow,newCol,newColor,matrixContaingPixel,initialColor)
                 }
             }
         }
@@ -28,18 +28,16 @@ const main=()=>{
         [0, 1, 1, 1,2],
         [1, 1, 1, 1,2],
         [0, 0, 0, 1,0],
-        [2, 2, 1, 1,0]
+        [1, 2, 1, 1,0]
     ];
     
     const row = matrixContaingPixel.length;
     const col = matrixContaingPixel[0].length;
-    const startingPoition=[1,2]
-    const startingRow=startingPoition[0]
-    const startingCol=startingPoition[1]
+    const [startingRow,startingCol]=[1,2]
     const initialColor=matrixContaingPixel[startingRow][startingCol]
     const newColor=3;
 
-    dfs(startingRow,startingCol,newColor,startingPoition,matrixContaingPixel,initialColor)
+    dfs(startingRow,startingCol,newColor,matrixContaingPixel,initialColor)
 
     return matrixContaingPixel
 }

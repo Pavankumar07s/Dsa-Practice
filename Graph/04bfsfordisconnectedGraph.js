@@ -30,8 +30,7 @@ class Graph {
     
         // Check whether the current node is connected to any other node or not 
         if (this.graph.has(f)) { 
-            let l = this.graph.get(f); 
-            for (let n of l) { 
+            for (let n of this.graph.get(f)) { 
             // Get all adjacent vertices of the dequeued vertex f. 
             // If an adjacent has not been visited, then mark it visited and enqueue it 
             if (!visited[n]) { 
