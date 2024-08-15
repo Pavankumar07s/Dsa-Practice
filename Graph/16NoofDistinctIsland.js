@@ -50,6 +50,7 @@ for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
         if (visitedMatrix[i][j] === 0 && matrix[i][j] === 1) {
             let listOfIsland = Bfs(visitedMatrix, i, j, matrix);
+            console.log(listOfIsland)
             SetA.add(JSON.stringify(listOfIsland)); 
         }
     }

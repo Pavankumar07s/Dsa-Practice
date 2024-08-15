@@ -36,7 +36,7 @@ g.addEdge(5, 4);
 g.addEdge(5, 6);
 g.addEdge(6, 5);
 g.addEdge(7, 8);
-g.addEdge(8, 3);
+g.addEdge(8, 7);
 
 
 let visitedList = Array(vertex).fill(false);

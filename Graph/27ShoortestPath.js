@@ -59,7 +59,7 @@ function main() {
 
   let distance = Array(v).fill(Infinity);
   distance[0] = 0;
-  console.log(g.stack)
+  // console.log(g.stack)
   while (g.stack.length) {
     let node = g.stack.shift();
     g.dfsForDistance(node, distance);

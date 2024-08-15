@@ -6,16 +6,13 @@ const Bfs = (row, col, visitedMatrix, matrixContaing1$0) => {
       if (matrixContaing1$0[i][j] === 1) {
         visitedMatrix[i][j] = 1;
         AnswerMatrix[i][j] = 0;
-        queue.push([[i, j], 0]);
+        queue.push([i, j, 0]);
       }
     }
   }
 
   while (queue.length !== 0) {
-    let [position, distance] = queue.shift();
-    let startingRow = position[0];
-    let startingCol = position[1];
-
+    let [startingRow,startingCol, distance] = queue.shift();
     for (let delRow = -1; delRow <= 1; delRow++) {
       for (let delCol = -1; delCol <= 1; delCol++) {
         // Only move horizontally or vertically, not diagonally
@@ -32,7 +29,7 @@ const Bfs = (row, col, visitedMatrix, matrixContaing1$0) => {
           ) {
             visitedMatrix[newRow][newCol] = 1;
             AnswerMatrix[newRow][newCol] = distance+1;
-            queue.push([[newRow, newCol], distance+1]);
+            queue.push([newRow, newCol, distance+1]);
           }
         }
       }

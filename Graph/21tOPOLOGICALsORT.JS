@@ -27,7 +27,6 @@ class Graph {
       }
     }
     this.Stack.unshift(src);
-    return false;
   }
 }
 
@@ -41,7 +40,7 @@ function main() {
   g.addEdge(3, 1);
   g.addEdge(4, 1);
   g.addEdge(4, 0);
-
+  console.log(g.graph)
   for (let i = 0; i < v; i++) {
     if (!g.visited[i]) {
       g.Dfs(i);

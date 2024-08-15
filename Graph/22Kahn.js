@@ -63,7 +63,7 @@ function main() {
   g.addEdge(4, 0);
 
   g.Bfs(v);
-
+  console.log(g.graph)
   console.log(g.topologicalOrder);
 }
 main();

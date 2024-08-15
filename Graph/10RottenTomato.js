@@ -18,7 +18,7 @@ const Bfs = (row, col, visitedMatrix, matrixContaingTomato) => {
 
   while (queue.length !== 0) {
     let TomatoData = queue.shift();
-    let [position,Time] = TomatoData[0];
+    let [position, Time] = TomatoData;
     time = Math.max(time,Time);
     let [startingRow,startingCol] = position
 

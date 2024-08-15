@@ -37,7 +37,7 @@ const main=()=>{
     const initialColor=matrixContaingPixel[startingRow][startingCol]
     const newColor=3;
 
-    dfs(startingRow,startingCol,newColor,matrixContaingPixel,initialColor)
+    dfs(startingRow,startingCol,newColor,matrixContaingPixel,initialColor);
 
     return matrixContaingPixel
 }
